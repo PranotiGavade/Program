@@ -22,26 +22,29 @@ bool strcmpX(char *first, char *second)
         return false;
     }
 }
+
 int main()
 {
-    char Arr[30];
-    char Brr[30];
+    char arr[30];
+    char brr[30];
     bool bRet = false;
 
     cout<<"Enter first string :"<<endl;
-    cin.getline(Arr,30);
+    cin.getline(arr,30);
 
     cout<<"Enter second string :"<<endl;
-    cin.getline(Brr,30);
+    cin.getline(brr,30);
 
-    bRet = strcmpX(Arr,Brr);
+    bRet = strcmpX(brr,arr);
+
     if(bRet == true)
     {
-        cout<<"Strings are identical\n";
+        cout<<"Strings are identical"<<endl;
     }
     else
     {
-        cout<<"Strings are not identical\n";
+        cout<<"Strings are different"<<endl;
     }
+
     return 0;
 }
