@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<stdbool.h>
+
 
 bool ChkDigit(char ch)
 {
@@ -17,7 +17,7 @@ int main()
     char cValue = '\0';
     bool bRet = false;
 
-    printf("Enter character");
+    printf("Enter character :\n");
     scanf("%c",&cValue);
 
     bRet == ChkDigit(cValue);

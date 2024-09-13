@@ -1,21 +1,21 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void Digits(int Arr[], int iSize)
+int Maximum(int Arr[], int iSize)
 {
-    int i = 0;
-    int iDigit = 0;
-    
-    while(i > 0)
+    int i = 0; 
+    int iMax = Arr[0];
+
+    for(i = 0; i < iSize; i++)
     {
-        iDigit = Arr[i] % 10;
-        if(iDigit = 3)
+        if(Arr[i] > iMax)
         {
-            printf("%d",Arr[i]);
-            i++;
+            iMax = Arr[i];
         }
-    }        
+    }
+    return iMax;
 }
+
 
 int main()
 {   
@@ -33,8 +33,10 @@ int main()
         scanf("%d",&p[iCnt]);
     }
  
-    Digits(p,iSize);
+    iRet = Maximum(p,iSize);
 
+    printf("Maximum number is : %d\n",iRet);
+    
     free(p);
 
     return 0;

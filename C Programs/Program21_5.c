@@ -1,20 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void Digits(int Arr[], int iSize)
+
+int Product(int Arr[], int iSize)
 {
     int i = 0;
-    int iDigit = 0;
-    
-    while(i > 0)
+    int iMult = 1;
+   
+    for(i = 0 ; i < iSize; i++)
     {
-        iDigit = Arr[i] % 10;
-        if(iDigit = 3)
+        if((Arr[i] % 2) != 0)
         {
-            printf("%d",Arr[i]);
-            i++;
+            iMult = iMult * Arr[i];
         }
-    }        
+    }
+    return iMult;
 }
 
 int main()
@@ -33,8 +33,10 @@ int main()
         scanf("%d",&p[iCnt]);
     }
  
-    Digits(p,iSize);
+    iRet = Product(p,iSize);
 
+    printf("Product is %d",iRet);
+    
     free(p);
 
     return 0;

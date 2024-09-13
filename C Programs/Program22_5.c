@@ -1,25 +1,23 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void Digits(int Arr[], int iSize)
+int Sum(int Arr[], int iSize)
 {
     int i = 0;
     int iDigit = 0;
-    
+    int iSum = 0;
     while(i > 0)
     {
         iDigit = Arr[i] % 10;
-        if(iDigit = 3)
-        {
-            printf("%d",Arr[i]);
-            i++;
-        }
-    }        
+        iSum = iSum + iDigit;
+        i++;
+    }
+    return iSum;      
 }
 
 int main()
 {   
-    int iSize = 0, iCnt = 0,iRet = 0;
+    int iSize = 0, iCnt = 0, iRet = 0;
     int *p = NULL;
    
     printf("Enter number of elements that you want : \n");
@@ -33,8 +31,10 @@ int main()
         scanf("%d",&p[iCnt]);
     }
  
-    Digits(p,iSize);
+    iRet = Sum(p,iSize);
 
+    printf("Summation is : %d",iRet);
+    
     free(p);
 
     return 0;

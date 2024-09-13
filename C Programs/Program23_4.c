@@ -3,7 +3,7 @@
 
 bool ChkDigit(char ch)
 {
-    if((ch >= '0') && (ch <= '9'))
+    if((ch >= 'a') && (ch <= 'z'))
     {   
         return true;
     }
@@ -17,18 +17,18 @@ int main()
     char cValue = '\0';
     bool bRet = false;
 
-    printf("Enter character");
+    printf("Enter character :\n");
     scanf("%c",&cValue);
 
     bRet == ChkDigit(cValue);
 
     if(bRet == true)
     {
-        printf("It is Digit\n");
+        printf("It is small case letter\n");
     }
     else
     {
-        printf("It is not a Digit\n");
+        printf("It is not a small case letter\n");
     }
 
     return 0;

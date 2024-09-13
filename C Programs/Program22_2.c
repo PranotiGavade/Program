@@ -1,21 +1,21 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void Digits(int Arr[], int iSize)
+int Minimum(int Arr[], int iSize)
 {
-    int i = 0;
-    int iDigit = 0;
-    
-    while(i > 0)
+    int i = 0; 
+    int iMin = Arr[0];
+
+    for(i = 0; i < iSize; i++)
     {
-        iDigit = Arr[i] % 10;
-        if(iDigit = 3)
+        if(Arr[i] < iMin)
         {
-            printf("%d",Arr[i]);
-            i++;
+            iMin = Arr[i];
         }
-    }        
+    }
+    return iMin;
 }
+
 
 int main()
 {   
@@ -33,8 +33,10 @@ int main()
         scanf("%d",&p[iCnt]);
     }
  
-    Digits(p,iSize);
+    iRet = Minimum(p,iSize);
 
+    printf("Minimum number is : %d\n",iRet);
+    
     free(p);
 
     return 0;

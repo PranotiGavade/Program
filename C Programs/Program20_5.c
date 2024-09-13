@@ -1,27 +1,26 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void Digits(int Arr[], int iSize)
+int Frequency(int Arr[], int iSize,int iNo)
 {
-    int i = 0;
-    int iDigit = 0;
-    
-    while(i > 0)
+    int i = 0, iFrequency = 0;
+
+    for(i = 0 ; i < iSize; i++)
     {
-        iDigit = Arr[i] % 10;
-        if(iDigit = 3)
+        if(Arr[i] == iNo)
         {
-            printf("%d",Arr[i]);
-            i++;
+            iFrequency++;
         }
-    }        
+    }
+    return iFrequency;
 }
 
 int main()
 {   
-    int iSize = 0, iCnt = 0,iRet = 0;
+    int iSize = 0, iCnt = 0,iRet = 0, iValue = 0;
     int *p = NULL;
    
+
     printf("Enter number of elements that you want : \n");
     scanf("%d",&iSize);
 
@@ -33,8 +32,13 @@ int main()
         scanf("%d",&p[iCnt]);
     }
  
-    Digits(p,iSize);
+    printf("Enter the element that you want to search :\n");
+    scanf("%d",&iValue);
 
+    iRet = Frequency(p,iSize,iValue);
+
+    printf("Frequency: %d",iRet);
+    
     free(p);
 
     return 0;
