@@ -1,7 +1,7 @@
 #include<stdio.h>
 
-#define DOZEN 12
 
+#define DOZEN 12
 int main()
 {
     int no = DOZEN;
